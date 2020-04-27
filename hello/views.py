@@ -10,7 +10,7 @@ from .models import Greeting
 #    return render(request, "index.html")
 #'''
 def index(request):
-    r = requests.get('http://httpbin.org/status/418')
+    r = request.get('http://httpbin.org/status/418')
     print(r.text)
     return render(request,HttpResponse('<pre>' + r.text + '</pre>'))
 
