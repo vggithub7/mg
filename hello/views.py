@@ -10,7 +10,7 @@ def index(request):
     return render(request, "index2.html")
 '''
 def index(request):
-    r = request.get('http://httpbin.org/status/418')
+    r = 'http://httpbin.org/status/418'
     print(r.text)
     return HttpResponse('<pre>' + r.text + '</pre>')
 #'''
