@@ -12,7 +12,7 @@ from .models import Greeting
 def index(request):
     r = request.get('http://httpbin.org/status/418')
     print(r.text)
-    return render(request,HttpResponse('<pre>' + r.text + '</pre>'))
+    return HttpResponse('<pre>' + r.text + '</pre>')
 
 def db(request):
 
