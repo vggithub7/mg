@@ -1,5 +1,6 @@
 import sys
 
-output="hello %s " % (sys.argv[1])
+output="hello from main folder %s " % (sys.argv[1])
 
-print(output)
+for i in range(10):
+	print(output,end="<br>")

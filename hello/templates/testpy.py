@@ -1,5 +1,6 @@
 import sys
 
-output="hello %s " % (sys.argv[1])
+output="hellou %s " % (sys.argv[1])
 
-print(output)
+for i in range(5):
+	print(output),
