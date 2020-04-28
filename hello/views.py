@@ -14,7 +14,9 @@ def index(request):
     return render(request, "index2.html")
 def external(request):
 	inp= request.POST.get('params')
-	out=run([sys.executable,'scrap_and_csv.py',inp],shell=False,stdout=PIPE)
+	inp2= request.POST.get('limit')
+	print(inp2)
+	out=run([sys.executable,'scrap_and_csv.py',inp,str(inp2)],shell=False,stdout=PIPE)
 	print(out)
 
 	return render(request,'index2.html',{'data1':out.stdout})

@@ -13,9 +13,11 @@
 	{% csrf_token %}
 	<label for="site-search">Search the site:</label>
 	<input type="search" id="site-search" name="params" placeholder="search for Subreddit... "
-       aria-label="Search through site content" required>
+       aria-label="Search through site content" required>  
+	<label for="limit">Quantity (between 1 and 1000):</label>
+  	<input type="number" id="quantity" name="limit" min="1" max="1000" required>
 	{{data_external}}	<br>
-	<table border="2">
+	<table >
         <tr>
 		<td>{{data1}}</td>
         </tr>

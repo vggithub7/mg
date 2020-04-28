@@ -12,11 +12,13 @@ reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
                      client_secret="75dtQXd2_TDzVqIUxMtK6QNS6Fc", 
                      user_agent='Testing1_api')
 name='%s'%(sys.argv[1])
+limit2='%s'%(sys.argv[2])
+limit1=int(limit2)
 a="apple"
 
 
 
-subNews=reddit.subreddit(name).hot(limit=10)
+subNews=reddit.subreddit(name).hot(limit=limit1)
 A=[]
 d=0
 for post in subNews:
