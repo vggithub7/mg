@@ -5,7 +5,7 @@ Created on Sun Apr 26 22:11:20 2020
 @author: amma bau ji
 """
 
-#import praw
+import praw
 import sys
 import pandas as pd
 ##reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
