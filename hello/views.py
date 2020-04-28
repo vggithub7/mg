@@ -7,7 +7,10 @@ from .models import Greeting
 
 def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "index2.html")
+    items=request.get_all('food')
+		
+		#self.write(render_str('shop_html.html',items=items))		
+    return render(request, "index2.html",items=items)
 '''
 def index(request):
     r = 'http://httpbin.org/status/418'
