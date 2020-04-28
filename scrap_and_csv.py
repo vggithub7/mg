@@ -8,9 +8,9 @@ Created on Sun Apr 26 22:11:20 2020
 import praw
 import sys
 import pandas as pd
-##reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
-#                     client_secret="75dtQXd2_TDzVqIUxMtK6QNS6Fc", 
-#                     user_agent='Testing1_api')
+reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
+                     client_secret="75dtQXd2_TDzVqIUxMtK6QNS6Fc", 
+                     user_agent='Testing1_api')
 name='%s'%(sys.argv[1])
 a="apple"
 name=a
