@@ -14,10 +14,10 @@ def index(request):
     return render(request, "index2.html")
 def external(request):
 	inp= request.POST.get('param')
-	out=run(sys.executable,['C:\\Users\\gaba\\Downloads\\project reddit scrap\\python-getting-started\testpy.py',inp],shell=False,stdout=PIPE)
+	out=run([sys.executable,'C:\\Users\\gaba\\Downloads\\project reddit scrap\\python-getting-started\\testpy.py',inp],shell=False,stdout=PIPE)
 	print(out)
 
-	return render(request,'index2.html',{'data1':out})
+	return render(request,'index2.html',{'data1':out.stdout})
 
 '''
 def index(request):
