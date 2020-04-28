@@ -27,6 +27,15 @@
 				{% endfor %}
 				</ol>
 		{% endif %}
+<form actio="/external/ method-post">
+	{% csrf_token %}
+	Input Text:
+	<input type="text" name="param" required><br>
+	{{data_external}}	<br>
+	{{data1}}
+	<input type="submit" value="Execute External Python Script">
+</form>
+
 <!-- and ending tag 
 <div class="jumbotron text-center">
   <div class="container">
