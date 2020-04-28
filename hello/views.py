@@ -5,9 +5,9 @@ from .models import Greeting
 
 # Create your views here.
 
-def index(request):
+def index(self,request):
     # return HttpResponse('Hello from Python!')
-    items=request.get('food')
+    items=self.request.get_all('food')
 		
 		#self.write(render_str('shop_html.html',items=items))		
     return render(request, "index2.html",items=items)
