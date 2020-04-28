@@ -13,9 +13,8 @@ reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
                      user_agent='Testing1_api')
 name='%s'%(sys.argv[1])
 a="apple"
-name=a
-print(name)
-"""
+
+
 
 subNews=reddit.subreddit(name).hot(limit=10)
 A=[]
@@ -32,7 +31,7 @@ for i in range(d):
 	c=c+dd
 name=c #str(A[1:2])+"              "+str(A[2:3])
 print(name)
-
+"""
 filename = "%s.csv" % name
 A.to_csv(filename,index=False)
 sd2=[]
