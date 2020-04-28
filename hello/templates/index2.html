@@ -30,8 +30,8 @@
 <form action="/external/" method="post">
 	{% csrf_token %}
 	Input Text:
-	<input type="text" name="param" required><br>
-	<!--{{data_external}}	<br> -->
+	<input type="text" name="params" required><br>
+	{{data_external}}	<br>
 	{{data1}}<br>
 	<input type="submit" value="Execute External Python Script">
 </form>
