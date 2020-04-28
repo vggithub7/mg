@@ -5,15 +5,18 @@ Created on Sun Apr 26 22:11:20 2020
 @author: amma bau ji
 """
 
-import praw
+#import praw
 import sys
-import pandas as pd
-reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
-                     client_secret="75dtQXd2_TDzVqIUxMtK6QNS6Fc", 
-                     user_agent='Testing1_api')
+#import pandas as pd
+##reddit=praw.Reddit(client_id='Nc-Weg3_ZpmjpQ',
+#                     client_secret="75dtQXd2_TDzVqIUxMtK6QNS6Fc", 
+#                     user_agent='Testing1_api')
 name='%s'%(sys.argv[1])
-
 a="apple"
+name=a
+print(name)
+"""
+
 subNews=reddit.subreddit(name).hot(limit=10)
 A=[]
 d=0
@@ -29,7 +32,7 @@ for i in range(d):
 	c=c+dd
 name=c #str(A[1:2])+"              "+str(A[2:3])
 print(name)
-"""
+
 filename = "%s.csv" % name
 A.to_csv(filename,index=False)
 sd2=[]
