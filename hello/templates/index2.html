@@ -2,39 +2,40 @@
 {% load static %}
 
 {% block content %}
+<head>
+    <style type="text/css">
+        td { width: 700px; overflow: hidden;  }
+        table { width : 700px; table-layout: fixed;}
+    </style>
+</head>
 <div class="container">
-<label for="site-search">Search the site:</label>
-<input type="search" id="site-search" name="q" placeholder="search for Subreddit... "
-       aria-label="Search through site content">
-
-<button>Search</button>
-</div>
-<form>
-			<h1>Add Food Item</h1>
-			<input type="text" name=food>
-			{% if items %}
-				{% for item in items %}
-					<input type="hidden" name=food value={{item}}>
-				{% endfor %}
-			{% endif %}
-			<button>Add</button>
-		</form>
-
-		{% if items %}
-			<h2>Shopping List</h2>
-				<ol>
-				{% for item in items %}<li>{{item}}</li>
-				{% endfor %}
-				</ol>
-		{% endif %}
 <form action="/external/" method="post">
+	{% csrf_token %}
+	<label for="site-search">Search the site:</label>
+	<input type="search" id="site-search" name="params" placeholder="search for Subreddit... "
+       aria-label="Search through site content" required>
+	{{data_external}}	<br>
+	<table border="2">
+        <tr>
+		<td>{{data1}}</td>
+        </tr>
+	</table>	
+
+	<br>
+	<input type="submit" value="Execute External Python Script">
+</form>
+</div>
+
+<!--form action="/external/" method="post">
 	{% csrf_token %}
 	Input Text:
 	<input type="text" name="params" required><br>
 	{{data_external}}	<br>
+	<>
 	{{data1}}<br>
+	
 	<input type="submit" value="Execute External Python Script">
-</form>
+</form -->
 
 <!-- and ending tag 
 <div class="jumbotron text-center">
