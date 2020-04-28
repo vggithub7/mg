@@ -17,7 +17,7 @@ def external(request):
 	out=run([sys.executable,'testpy.py',inp],shell=False,stdout=PIPE)
 	print(out)
 
-	return render(request,'index2.html',{'data1':out})
+	return render(request,'index2.html',{'data1':out.stdout})
 
 '''
 def index(request):
