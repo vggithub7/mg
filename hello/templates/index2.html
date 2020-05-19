@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block content %}
+
 <head>
-    <style type="text/css">
+    <!--style type="text/css">
         td { width: 700px; overflow: hidden;  }
         table { width : 700px; table-layout: fixed;}
-    </style>
+    </style-->
 </head>
 <div class="container">
 <form action="/external/" method="post">
@@ -17,12 +18,17 @@
 	<label for="limit">Quantity (between 1 and 1000):</label>
   	<input type="number" id="quantity" name="limit" min="1" max="1000" required>
 	{{data_external}}	<br>
-	<table >
+	{% autoescape off %} 
+	<!--table >
         <tr>
 		<td>{{data1}}</td>
         </tr>
-	</table>	
-
+	</table-->
+	
+		
+	{{data1}}
+	{% endautoescape %}	
+	{{data2}}
 	<br>
 	<input type="submit" value="Execute External Python Script">
 </form>

@@ -22,17 +22,20 @@ subNews=reddit.subreddit(name).hot(limit=limit1)
 A=[]
 d=0
 for post in subNews:
-    A.append([post.title,post.link_flair_text])
+    A.append([d+1,post.title,post.link_flair_text])
     d+=1	
-A=pd.DataFrame(A,columns=['title','flare'])
-#print(A)
-c=""
+A=pd.DataFrame(A,columns=['#','title','flare'])
+B=A.to_html(escape=False,col_space=15,index=False)
+print(B)
+"""c=""
 dd=""
 for i in range(d):
 	dd=str(A[i+1:i+2]).ljust(280,'*')+'|'
 	c=c+dd
 name=c #str(A[1:2])+"              "+str(A[2:3])
 print(name)
+print(limit1)
+"""
 """
 filename = "%s.csv" % name
 A.to_csv(filename,index=False)

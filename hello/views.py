@@ -5,6 +5,9 @@ import sys
 #import requests
 from .models import Greeting
 
+
+
+
 # Create your views here.
 
 def index(request):
@@ -18,8 +21,11 @@ def external(request):
 	print(inp2)
 	out=run([sys.executable,'scrap_and_csv.py',inp,str(inp2)],shell=False,stdout=PIPE)
 	print(out)
-
-	return render(request,'index2.html',{'data1':out.stdout})
+	#
+	#outtry="<b>hello <br> hii </b>"
+	
+	
+	return render(request,'index2.html',{'data1':out.stdout.decode()})#,'data2':out.stdout[1]})
 
 '''
 def index(request):
